@@ -7,9 +7,24 @@
   <h1>Chat Widget Test Page</h1>
   <p>If working, a chat bubble should appear in the bottom-right corner.</p>
 
-  <!-- PASTE YOUR SALESFORCE EMBED SNIPPET BELOW THIS LINE -->
+  <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US';
+			embeddedservice_bootstrap.init(
+				'00D8c000002gSai',
+				'Web_Channel',
+				'https://kitopi.my.site.com/ESWWebChannel1782820658700',
+				{
+					scrt2URL: 'https://kitopi.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+  </script>
+  <script type='text/javascript' src='https://kitopi.my.site.com/ESWWebChannel1782820658700/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
-
-  <!-- PASTE ABOVE THIS LINE -->
 </body>
 </html>
